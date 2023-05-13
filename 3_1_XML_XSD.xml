@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<biblioteca>
+
+<biblioteca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="3_XSD.xsd">
+
     <documentos>
         <libros>
             <libro id="L0001" tipo_clase="novela" num_paginas= "300">

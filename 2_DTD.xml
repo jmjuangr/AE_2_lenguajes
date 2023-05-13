@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteca [
+<!ELEMENT biblioteca (documentos)>
+<!ELEMENT documentos (libros, revistas, periodicos)>
+<!ELEMENT libros (libro*)>
+<!ELEMENT libro (titulo, indice, sinopsis)>
+<!ATTLIST libro id ID #REQUIRED
+               tipo_clase (novela | infantil | didactico) #REQUIRED
+               num_paginas CDATA #REQUIRED>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT indice (capitulo*)>
+<!ATTLIST indice enlace_indice CDATA #REQUIRED>
+<!ELEMENT capitulo (titulo, contenido)>
+<!ATTLIST capitulo num_paginas CDATA #REQUIRED>
+<!ELEMENT contenido EMPTY>
+<!ATTLIST contenido enlace_info CDATA #REQUIRED>
+<!ELEMENT sinopsis (#PCDATA)>
+
+<!ELEMENT revistas (revista*)>
+<!ELEMENT revista (titulo, numero_revista, indice)>
+<!ATTLIST revista id ID #REQUIRED
+                  tipo_clase (informatica | corazon | coches | investigacion | otras) #REQUIRED
+                  num_paginas CDATA #REQUIRED>
+<!ELEMENT numero_revista (#PCDATA)>
+<!ELEMENT seccion (contenido)>
+<!ATTLIST seccion tipo_seccion CDATA #REQUIRED
+                 numero_paginas CDATA #REQUIRED>
+                 
+<!ELEMENT periodicos (periodico*)>
+<!ELEMENT periodico (titulo, indice)>
+<!ATTLIST periodico id ID #REQUIRED
+                    tipo_clase (nacional | internacional) #REQUIRED
+                    fecha_publicacion CDATA #REQUIRED>
+<!ELEMENT articulo (contenido)>
+<!ATTLIST articulo autor CDATA #REQUIRED>
+]>
+
+
+
+<biblioteca>
+    <documentos>
+        <libros>
+            <libro id="L0001" tipo_clase="novela" num_paginas="300">
+                <titulo>La Odisea</titulo>
+                <indice enlace_indice="https://es.wikipedia.org/wiki/Odisea#Estructura_y_argumento">
+                    <capitulo num_paginas="20">
+                        <titulo>Canto I</titulo>
+                        <contenido enlace_info="https://es.wikipedia.org/wiki/Odisea#Canto_I" />
+                    </capitulo>
+
+                    <capitulo num_paginas="26">
+                        <titulo>Canto II</titulo>
+                        <contenido enlace_info="https://es.wikipedia.org/wiki/Odisea#Canto_II"></contenido>
+                    </capitulo>
+                </indice>
+                <sinopsis>La obra consta de 24 cantos. Al igual que muchos poemas épicos antiguos,
+                    comienza in medias res: empieza en la mitad de la historia, contando los hechos
+                    anteriores a base de recuerdos o narraciones del propio Odiseo. El poema está
+                    dividido en tres partes. En la Telemaquia (cantos del I al IV) se describe la
+                    situación de Ítaca con la ausencia de su rey, el sufrimiento de Telémaco y
+                    Penélope debido a los pretendientes, y cómo el joven emprende un viaje en busca
+                    de su padre. En el regreso de Odiseo (cantos del V al XII) Odiseo llega a la
+                    corte del rey Alcínoo y narra todas sus vivencias desde que salió de Troya.
+                    Finalmente, en la venganza de Odiseo (cantos del XIII al XXIV), se describe el
+                    regreso a la isla, el reconocimiento por alguno de sus esclavos y su hijo, y
+                    cómo Odiseo se venga de los pretendientes matándolos a todos. Tras aquello,
+                    Odiseo es reconocido por su esposa Penélope y recupera su reino. Por último, se
+                    firma la paz entre todos los itacenses.</sinopsis>
+
+            </libro>
+
+            <libro id="L0002" tipo_clase="infantil" num_paginas="32">
+                <titulo>Teo en la escuela</titulo>
+                <indice
+                    enlace_indice="https://www.planetadelibros.com/libro-teo-en-la-escuela/200001">
+                    <capitulo num_paginas="2">
+                        <titulo>Parte 1 </titulo>
+                        <contenido
+                            enlace_info="https://www.planetadelibros.com/libro-teo-en-la-escuela/200001" />
+                    </capitulo>
+
+                    <capitulo num_paginas="2">
+                        <titulo>Parte 2</titulo>
+                        <contenido
+                            enlace_info="https://www.planetadelibros.com/libro-teo-en-la-escuela/200001"></contenido>
+                    </capitulo>
+                </indice>
+                <sinopsis>Hoy es el primer día de clase, y Teo y su hermano Pablo llegan al colegio
+                    con muchas ganas de encontrar a sus amigos y aprender un montón de cosas nuevas.
+                    Disfruta con Teo en la escuela, el mayor éxito de Teo descubre el mundo, la
+                    colección más emblemática de este entrañable personaje. Una historia muy cercana
+                    con nuevas y actuales ilustraciones.</sinopsis>
+
+            </libro>
+
+        </libros>
+
+        <revistas>
+            <revista id="R0001" tipo_clase="informatica" num_paginas="30">
+                <titulo>PC World</titulo>
+                <numero_revista>Enero 1999</numero_revista>
+                <indice>
+                    <seccion tipo_seccion="Top 10 software" numero_paginas="4">
+                        <contenido enlace_info="https://www.pcworld.com/" />
+                    </seccion>
+                    <seccion tipo_seccion="Monta tu propio PC" numero_paginas="8">
+                        <contenido enlace_info="hhttps://www.pcworld.com/" />
+                    </seccion>
+                </indice>
+            </revista>
+
+            <revista id="R0002" tipo_clase="corazon" num_paginas="40">
+                <titulo>Pronto</titulo>
+                <numero_revista>Mayo 2023</numero_revista>
+                <indice>
+                    <seccion tipo_seccion="Famosas" numero_paginas="10">
+                        <contenido enlace_info="https://www.pronto.es/" />
+                    </seccion>
+                    <seccion tipo_seccion="Dietas" numero_paginas="10">
+                        <contenido enlace_info="https://www.pronto.es/" />
+                    </seccion>
+                </indice>
+            </revista>
+
+            <revista id="R0003" tipo_clase="coches" num_paginas="55">
+                <titulo>CAR</titulo>
+                <numero_revista>Abril 2023</numero_revista>
+                <indice>
+                    <seccion tipo_seccion="Mejores coches electricos" numero_paginas="15">
+                        <contenido enlace_info="https://www.revistacar.es/" />
+                    </seccion>
+                    <seccion tipo_seccion="Comparativa SUVs" numero_paginas="20">
+                        <contenido enlace_info="https://www.revistacar.es/" />
+                    </seccion>
+                </indice>
+            </revista>
+
+            <revista id="R0004" tipo_clase="investigacion" num_paginas="50">
+                <titulo>Muy interesante</titulo>
+                <numero_revista>Febrero 2000</numero_revista>
+                <indice>
+                    <seccion tipo_seccion="Ciencia" numero_paginas="3">
+                        <contenido enlace_info="https://www.muyinteresante.es/" />
+                    </seccion>
+                    <seccion tipo_seccion="Naturaleza" numero_paginas="4">
+                        <contenido enlace_info="hhttps://www.muyinteresante.es/" />
+                    </seccion>
+                    <seccion tipo_seccion="Tecnologia" numero_paginas="5">
+                        <contenido enlace_info="https://www.muyinteresante.es/" />
+                    </seccion>
+                </indice>
+            </revista>
+
+
+        </revistas>
+
+
+        <periodicos>
+
+            <periodico id="P0001" tipo_clase="nacional" fecha_publicacion="07/05/2023">
+                <titulo>El Pais</titulo>
+                <indice>
+                    <seccion tipo_seccion="Economica">
+                        <articulo autor="Lluis Pellicer">
+                            <contenido
+                                enlace_info="https://elpais.com/economia/2023-05-07/los-bancos-centrales-empiezan-a-echar-el-freno-tras-la-mayor-subida-de-tipos-desde-los-anos-ochenta.html" />
+                        </articulo>
+                    </seccion>
+
+                    <seccion tipo_seccion="Opinion">
+                        <articulo autor="Mariam Martinez">
+                            <contenido
+                                enlace_info="https://elpais.com/opinion/2023-05-07/el-ajedrez-y-la-nueva-geopolitica.html" />
+                        </articulo>
+                    </seccion>
+                    <seccion tipo_seccion="Deportes">
+                        <articulo autor="Jose Samano">
+                            <contenido
+                                enlace_info="https://elpais.com/deportes/2023-05-06/vinicius-vale-una-copa.html" />
+                        </articulo>
+                    </seccion>
+                </indice>
+            </periodico>
+
+
+            <periodico id="P0002" tipo_clase="internacional" fecha_publicacion="07/05/2023">
+                <titulo>New York Post</titulo>
+                <indice>
+                    <seccion tipo_seccion="Economica">
+                        <articulo autor="Prada">
+                            <contenido enlace_info="https://www.muyinteresante.es/" />
+                        </articulo>
+                    </seccion>
+
+                    <seccion tipo_seccion="Opinion">
+                        <articulo autor="Prada">
+                            <contenido enlace_info="https://www.muyinteresante.es/" />
+                        </articulo>
+                    </seccion>
+                    <seccion tipo_seccion="Deportes">
+                        <articulo autor="Prada">
+                            <contenido enlace_info="https://www.muyinteresante.es/" />
+                        </articulo>
+                    </seccion>
+                </indice>
+            </periodico>
+        </periodicos>
+
+    </documentos>
+</biblioteca>
+
+<!-- El motivo por el cual no puedo validar el XML es debido a que el elemento <indice> se encuentra
+tanto dentro de <libro> como dentro de <revista> y <periodico>, y tiene una estructura diferente en
+cada caso. En el DTD, solo se define <indice> con la estructura que tiene dentro de <libro>, y
+ocurre lo mismo con <seccion>. 
+
+Dado que en el DTD no puedo redefinir los elementos para que tengan diferentes estructuras en
+diferentes contextos, no consigo validar completamente el XML sin modificar el XML original.-->
