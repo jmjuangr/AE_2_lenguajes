@@ -1,0 +1,34 @@
+
+<!ELEMENT biblioteca (documentos)>
+<!ELEMENT documentos (libros, revistas, periodicos)>
+<!ELEMENT libros (libro*)>
+<!ELEMENT libro (titulo, indice, sinopsis)>
+<!ATTLIST libro id ID #REQUIRED
+               tipo_clase (novela | infantil | didactico) #REQUIRED
+               num_paginas CDATA #REQUIRED>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT indice (capitulo*)>
+<!ATTLIST indice enlace_indice CDATA #REQUIRED>
+<!ELEMENT capitulo (titulo, contenido)>
+<!ATTLIST capitulo num_paginas CDATA #REQUIRED>
+<!ELEMENT contenido EMPTY>
+<!ATTLIST contenido enlace_info CDATA #REQUIRED>
+<!ELEMENT sinopsis (#PCDATA)>
+
+<!ELEMENT revistas (revista*)>
+<!ELEMENT revista (titulo, numero_revista, indice)>
+<!ATTLIST revista id ID #REQUIRED
+                  tipo_clase (informatica | corazon | coches | investigacion | otras) #REQUIRED
+                  num_paginas CDATA #REQUIRED>
+<!ELEMENT numero_revista (#PCDATA)>
+<!ELEMENT seccion (contenido)>
+<!ATTLIST seccion tipo_seccion CDATA #REQUIRED
+                 numero_paginas CDATA #REQUIRED>
+                 
+<!ELEMENT periodicos (periodico*)>
+<!ELEMENT periodico (titulo, indice)>
+<!ATTLIST periodico id ID #REQUIRED
+                    tipo_clase (nacional | internacional) #REQUIRED
+                    fecha_publicacion CDATA #REQUIRED>
+<!ELEMENT articulo (contenido)>
+<!ATTLIST articulo autor CDATA #REQUIRED>

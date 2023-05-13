@@ -134,19 +134,19 @@
                 <titulo>New York Post</titulo>
                         <indice>
                             <seccion tipo_seccion="Economica">
-                                <articulo autor="Prada">
-                                    <contenido enlace_info="https://www.muyinteresante.es/"/>
+                                <articulo autor="Jennifer Gould">
+                                    <contenido enlace_info="https://nypost.com/business/"/>
                                 </articulo>
                             </seccion>
                             
                             <seccion tipo_seccion="Opinion">
-                                <articulo autor="Prada">
-                                    <contenido enlace_info="https://www.muyinteresante.es/"/>
+                                <articulo autor="Bob McManus">
+                                    <contenido enlace_info="https://nypost.com/opinion/"/>
                                 </articulo>
                             </seccion>
                             <seccion tipo_seccion="Deportes">
-                                <articulo autor="Prada">
-                                    <contenido enlace_info="https://www.muyinteresante.es/"/>
+                                <articulo autor="Peter Botte">
+                                    <contenido enlace_info="https://nypost.com/sports/"/>
                                 </articulo>
                             </seccion>
                         </indice>
