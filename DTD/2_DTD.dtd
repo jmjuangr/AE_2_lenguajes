@@ -1,6 +1,9 @@
 
 <!ELEMENT biblioteca (documentos)>
 <!ELEMENT documentos (libros, revistas, periodicos)>
+
+<!-- Libros -->
+
 <!ELEMENT libros (libro*)>
 <!ELEMENT libro (titulo, indice, sinopsis)>
 <!ATTLIST libro id ID #REQUIRED
@@ -15,6 +18,8 @@
 <!ATTLIST contenido enlace_info CDATA #REQUIRED>
 <!ELEMENT sinopsis (#PCDATA)>
 
+<!-- Revistas -->
+
 <!ELEMENT revistas (revista*)>
 <!ELEMENT revista (titulo, numero_revista, indice)>
 <!ATTLIST revista id ID #REQUIRED
@@ -25,6 +30,8 @@
 <!ATTLIST seccion tipo_seccion CDATA #REQUIRED
                  numero_paginas CDATA #REQUIRED>
                  
+<!-- Periodicos -->
+
 <!ELEMENT periodicos (periodico*)>
 <!ELEMENT periodico (titulo, indice)>
 <!ATTLIST periodico id ID #REQUIRED
